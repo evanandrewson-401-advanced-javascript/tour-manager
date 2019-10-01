@@ -14,8 +14,7 @@
     "test:watch": "npm run jest -- --watchAll",
     "test:verbose": "npm run test -- --verbose",
     "start": "node server.js",
-    "start:watch": "nodemon server.js",
-    "load:cats": "mongoimport --db famous-cats --collection cats --drop --jsonArray --file ./data/cats.json"
+    "start:watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",

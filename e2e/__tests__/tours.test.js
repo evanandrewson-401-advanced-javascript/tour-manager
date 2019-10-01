@@ -39,7 +39,8 @@ describe('tours api', () => {
       .then(({ body }) => {
         expect(body).toMatchInlineSnapshot(
           {
-            _id: expect.any(String)
+            _id: expect.any(String),
+            launchDate: expect.any(String)
           },
           `
           Object {
@@ -50,7 +51,41 @@ describe('tours api', () => {
               "food",
               "beer",
             ],
-            "launchDate": "2019-10-01T21:43:21.429Z",
+            "launchDate": Any<String>,
+            "stops": Array [],
+            "title": "North American Tour",
+          }
+        `
+        );
+      });
+  });
+
+  it('gets all tours', () => {
+    return Promise.all([
+      postTour(northAmericanTour),
+      postTour(northAmericanTour),
+      postTour(northAmericanTour)
+    ])
+      .then(() => {
+        return request.get('/api/tours').expect(200);
+      })
+      .then(({ body }) => {
+        expect(body.length).toBe(3);
+        expect(body[0]).toMatchInlineSnapshot(
+          {
+            _id: expect.any(String),
+            launchDate: expect.any(String)
+          },
+          `
+          Object {
+            "__v": 0,
+            "_id": Any<String>,
+            "activities": Array [
+              "music",
+              "food",
+              "beer",
+            ],
+            "launchDate": Any<String>,
             "stops": Array [],
             "title": "North American Tour",
           }

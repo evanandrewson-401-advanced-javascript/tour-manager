@@ -1,6 +1,13 @@
+jest.mock('../../lib/services/maps-api');
 const request = require('../request');
 const db = require('../db');
 const postTour = require('./tours.test');
+const getLocation = require('../../lib/services/maps-api');
+
+getLocation.mockResolvedValue({
+  latitude: 45.5113506,
+  longitude: -122.6456739
+});
 
 describe('stops api', () => {
   beforeEach(() => {

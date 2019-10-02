@@ -1,6 +1,14 @@
 const request = require('../request');
 const db = require('../db');
 
+const postTour = function(tour) {
+  return request
+    .post('/api/tours')
+    .send(tour)
+    .expect(200)
+    .then(({ body }) => body);
+}
+
 describe('tours api', () => {
   beforeEach(() => {
     return db.dropCollection('tours');
@@ -12,13 +20,6 @@ describe('tours api', () => {
     stops: []
   };
 
-  function postTour(tour) {
-    return request
-      .post('/api/tours')
-      .send(tour)
-      .expect(200)
-      .then(({ body }) => body);
-  }
 
   it('posts a tour', () => {
     return postTour(northAmericanTour).then(tour => {
@@ -94,3 +95,5 @@ describe('tours api', () => {
       });
   });
 });
+
+module.exports = postTour;

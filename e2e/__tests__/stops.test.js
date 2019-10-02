@@ -40,4 +40,17 @@ describe('stops api', () => {
         });
     });
   });
+  it('deletes a stop', () => {
+    return postTour(northAmericanTour).then(tour => {
+      return request
+        .post(`/api/tours/${tour._id}/stops`)
+        .expect(200)
+        .send({ address: 97214 })
+        .then(stop => {
+          return request
+            .delete(`/api/tours/${tour._id}/stops/${stop._id}`)
+            .expect(200)
+        });
+    });
+  });
 });

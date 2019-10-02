@@ -1,13 +1,12 @@
 # LAB - 
 
-## Lab 09
+## Lab Class 12
 
-### Author: Evan Andrewson and Phil Fitch
+### Author: Evan Andrewson
 
 ### Links and Resources
-* [submission PR](https://github.com/evan-and-phil-ripe-bananas/ripe-banana/pull/1)
-* [travis](https://travis-ci.com/evan-and-phil-ripe-bananas/ripe-banana)
-* [heroku](https://fast-cliffs-65972.herokuapp.com/)
+* [submission PR](https://github.com/evanandrewson-401-advanced-javascript/tour-manager/pull/1)
+* [travis](https://travis-ci.com/evanandrewson-401-advanced-javascript/tour-manager)
 
 #### Running the app
 

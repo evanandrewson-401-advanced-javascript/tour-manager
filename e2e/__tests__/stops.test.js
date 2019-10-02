@@ -9,7 +9,7 @@ getLocation.mockResolvedValue({
   longitude: -122.6456739
 });
 
-describe('stops api', () => {
+describe.skip('stops api', () => {
   beforeEach(() => {
     return db.dropCollection('tours');
   });
